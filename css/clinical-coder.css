@@ -1,0 +1,567 @@
+﻿@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css");
+
+:root {
+    --Theme-background-color: #1e1c64;
+    --Theme-text-color: #ffffff;
+}
+
+
+.isSelected {
+    background-color: #5683b61a;
+}
+
+.spinner-container {
+    position: absolute;
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    background-color: #1e1c6442;
+}
+
+#clinical-code .offcanvas.offcanvas-bottom {
+    height: 95%;
+}
+
+
+#clinical-code .offcanvas .offcanvas-header {
+    background-color: var(--Theme-background-color);
+    color: var(--Theme-text-color);
+    height: 3rem;
+}
+
+#clinical-code .offcanvas .offcanvas-body {
+    padding: 0.3rem;
+    background-color: #c0adad57;
+}
+
+#clinical-code .offcanvas .offcanvas-header .btn-close {
+    background-color: #ffffff;
+}
+
+#clinical-code .btn.btn-generate {
+    background-color: var(--Theme-background-color);
+    color: var(--Theme-text-color);
+    width: 100%;
+    max-width: 12rem;
+}
+
+#clinical-code .flex-content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    column-gap: 0.4rem;
+    height: 100%;
+}
+    /*#region recording*/
+    #clinical-code .flex-content .recording {
+        width: 20rem;
+        border: 1px solid #ccc4c4;
+        overflow: auto;
+        border-top-left-radius: 0.4rem;
+        border-top-right-radius: 0.4rem;
+        background-color: #fff;
+    }
+
+        #clinical-code .flex-content .recording .mic {
+            background-image: url('../img/mic.png');
+            cursor: pointer;
+            height: 7rem;
+            width: 7rem;
+            background-repeat: no-repeat;
+        }
+
+        #clinical-code .flex-content .recording .mic-stop {
+            background-image: url('../img/stop_mic.png');
+            display: none;
+            cursor: pointer;
+            animation: zoom 2s infinite alternate;
+            height: 7rem;
+            width: 7rem;
+            background-repeat: no-repeat;
+        }
+
+        #clinical-code .flex-content .recording .recording-header {
+            background-color: var(--Theme-background-color);
+            color: var(--Theme-text-color);
+            height: 2.6rem;
+            padding: 0.4rem;
+        }
+
+        #clinical-code .flex-content .recording .recording-body {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding-block: 6rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+            #clinical-code .flex-content .recording .recording-body audio {
+                width: 15rem;
+                position: absolute;
+                bottom: 9px;
+            }
+
+            #clinical-code .flex-content .recording .recording-body .recording-btn {
+                display: flex;
+                flex-direction: row;
+                gap: 1rem;
+                padding-inline: 0.5rem;
+                justify-content: center;
+            }
+
+    /*#endregion recording*/
+
+
+    /*#region medical-record*/
+    #clinical-code .flex-content .medical-record {
+        width: 50%;
+        border: 1px solid #ccc4c4;
+        border-top-left-radius: 0.4rem;
+        border-top-right-radius: 0.4rem;
+        background-color: #ffffff;
+        height: 94%;
+    }
+
+        #clinical-code .flex-content .medical-record .medical-record-header {
+            background-color: var(--Theme-background-color);
+            color: var(--Theme-text-color);
+            height: 2.6rem;
+            padding: 0.4rem;
+        }
+
+        #clinical-code .flex-content .medical-record .medical-record-body {
+            padding: 0.4rem;
+            height: 94%;
+        }
+
+            #clinical-code .flex-content .medical-record .medical-record-body textarea {
+                width: 100%;
+                height: inherit;
+            }
+
+            #clinical-code .flex-content .medical-record .medical-record-body pre {
+                white-space: pre-wrap;
+            }
+
+        #clinical-code .flex-content .medical-record .generate-btn {
+            display: flex;
+            justify-content: right;
+            padding-top: 11px;
+        }
+
+            #clinical-code .flex-content .medical-record .generate-btn button {
+                width: 8rem;
+                height: 2rem;
+                background-color: var(--Theme-background-color);
+                color: var(--Theme-text-color);
+                border: 1px solid var(--Theme-background-color);
+                border-radius: 0.3rem;
+            }
+/*#endregion medical-record*/
+
+/*#region coding*/
+.btn-code {
+    position: fixed;
+    bottom: 4px;
+    right: 5px;
+    width: 8rem;
+    height: 2rem;
+    background-color: var(--Theme-background-color);
+    color: var(--Theme-text-color);
+    border: 1px solid var(--Theme-background-color);
+    border-radius: 0.3rem;
+}
+
+#clinical-code .flex-content .coding {
+    width: 50%;
+    border: 1px solid #ccc4c4;
+    overflow: auto;
+    border-top-left-radius: 0.4rem;
+    border-top-right-radius: 0.4rem;
+    background-color: #ffffff;
+    height: 94%;
+}
+
+
+    #clinical-code .flex-content .coding .coding-header .nav nav-tabs {
+        width: 100%;
+    }
+
+    #clinical-code .flex-content .coding .coding-header .nav button {
+        width: 50%;
+    }
+
+    #clinical-code .flex-content .coding .coding-body .accordion .accordion-item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.1rem;
+        border: none;
+    }
+
+        #clinical-code .flex-content .coding .coding-body .accordion .accordion-item .accordion-body {
+            border-bottom: 1px solid #ccc4c4;
+            line-height: 0.5rem;
+            padding: 15px 10px 1px 10px;
+        }
+
+            #clinical-code .flex-content .coding .coding-body .accordion .accordion-item .accordion-body .code {
+                text-align: end;
+            }
+
+        #clinical-code .flex-content .coding .coding-body .accordion .accordion-item .accordion-button {
+            color: #1e1e1e;
+            background-color: #b5cee2;
+        }
+
+
+
+/*#endregion coding*/
+
+
+@media (max-width: 600px) {
+    #clinical-code .offcanvas.offcanvas-bottom {
+        height: 100%;
+    }
+
+    #clinical-code .flex-content {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+        #clinical-code .flex-content .recording {
+            width: 100%;
+            max-height: 50%;
+        }
+
+        #clinical-code .flex-content .medical-record {
+            width: 100%;
+            max-height: 50%;
+        }
+
+        #clinical-code .flex-content .coding {
+            width: 100%;
+            max-height: calc(50% - 1rem);
+        }
+
+            #clinical-code .flex-content .coding .btn-code {
+                position: fixed;
+                bottom: 0.5rem;
+                right: 2rem;
+                width: 5rem;
+                height: 5rem;
+                background-color: var(--Theme-background-color);
+                color: var(--Theme-text-color);
+                border: 1px solid var(--Theme-background-color);
+                border-radius: 3rem;
+                z-index: 10;
+            }
+
+        #clinical-code .flex-content .medical-record .generate-btn button {
+            position: fixed;
+            bottom: 6rem;
+            right: 2rem;
+            width: 5rem;
+            height: 5rem;
+            background-color: var(--Theme-background-color);
+            color: var(--Theme-text-color);
+            border: 1px solid var(--Theme-background-color);
+            border-radius: 3rem;
+            z-index: 10;
+        }
+
+        #clinical-code .flex-content .recording .recording-body audio {
+            width: 15rem;
+            position: absolute;
+            top: 6rem;
+        }
+}
+
+
+/*-----Plugin changes------*/
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: var(--Theme-text-color);
+    background-color: var(--Theme-background-color);
+    border-color: var(--Theme-background-color);
+}
+
+.accordion-item:first-of-type .accordion-button {
+    border-radius: 0;
+}
+
+.accordion-item:last-of-type .accordion-button.collapsed {
+    border-radius: 0;
+}
+
+/*------End Plugin changes------*/
+
+
+
+
+
+
+
+
+/*#region Generate Codes*/
+.custom-nav, .custom-nav a, .custom-nav a:hover {
+    background-color: var(--Theme-background-color);
+    color: #fff
+}
+
+
+
+.medical-record {
+    border-radius: 8px
+}
+
+    .medical-record .medical-record-header {
+        background-color: var(--Theme-background-color);
+        color: var(--Theme-text-color);
+        padding: 10px;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px
+    }
+
+    .medical-record .medical-record-body {
+        /*max-height: 50vh;*/
+        overflow: auto;
+        padding: 10px
+    }
+
+        .medical-record .medical-record-body pre {
+            height: 96%;
+            border: 1px solid #80808070;
+        }
+
+.predict-clinical-btn {
+    background-color: var(--Theme-background-color);
+    color: var(--Theme-text-color);
+    margin-block: 1rem;
+    width: 20rem;
+    border-radius: 10rem
+}
+
+    .predict-clinical-btn:hover {
+        background-color: var(--Theme-background-color);
+        color: var(--Theme-text-color);
+        transform: scale(1.05)
+    }
+
+.loading-btn {
+    gap: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1e1c64 !important;
+    color: #fff !important;
+}
+
+.form-check-input[type=checkbox] {
+    border-radius: 20rem;
+    padding: .5rem
+}
+
+.form-check-input:checked {
+    background-color: var(--Theme-background-color);
+    border-radius: 20rem;
+    padding: .5rem
+}
+
+.mainList {
+    width: 100%;
+    overflow: auto;
+    border: 1px solid #e7e7e7;
+    margin-bottom: 1rem
+}
+
+    .mainList .icon {
+        color: var(--Theme-background-color);
+        font-size: 1.5rem
+    }
+
+.list {
+    min-height: 200px;
+    width: 50%;
+    overflow: auto
+}
+
+.list-group-header {
+    background-color: var(--Theme-background-color);
+    color: var(--Theme-text-color);
+    padding: 10px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    position: sticky;
+    top: 0;
+    z-index: 10
+}
+
+.list-group-item {
+    padding: 1rem
+}
+
+    .list-group-item .code {
+        color: #1e1c64
+    }
+
+    .list-group-item .name {
+        padding-left: 2rem
+    }
+
+    .list-group-item .code-type {
+        text-align: right;
+        font-size: 14px;
+        color: #8b8b8b
+    }
+
+.selected-clinical-btn {
+    background-color: var(--Theme-background-color);
+    color: var(--Theme-text-color);
+    margin-block: 1rem;
+    width: 20rem;
+    border-radius: 10rem
+}
+
+    .selected-clinical-btn:hover {
+        background-color: var(--Theme-background-color);
+        color: var(--Theme-text-color);
+        transform: scale(1.05)
+    }
+
+.modal-header {
+    background-color: var(--Theme-background-color);
+    color: #fff
+}
+
+.modal-body {
+    display: flex;
+    gap: .5rem
+}
+
+.save-btn, .save-btn:hover {
+    background-color: var(--Theme-background-color);
+    color: #fff
+}
+
+#selectedItems .item-name {
+    display: flex;
+    flex-direction: row;
+    column-gap: 1rem;
+    align-items: center
+}
+
+#mainSelectedItems {
+    max-height: 22rem;
+    overflow: auto;
+    background-color: #1e1c6412
+}
+
+    #mainSelectedItems .item-idc {
+        text-align: right
+    }
+
+    #mainSelectedItems .item-name {
+        display: flex;
+        flex-direction: row;
+        column-gap: 1rem;
+        align-items: center
+    }
+
+#selectedItems .item-idc {
+    text-align: right
+}
+
+.lds-dual-ring {
+    position: fixed;
+    left: 46%;
+    top: 43%
+}
+
+.loader-backdrop {
+    position: fixed;
+    background-color: #0000004a;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: none;
+    top: 0;
+    left: 0
+}
+
+.lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid var(--Theme-text-color);
+    border-color: #1e1c64 transparent;
+    animation: lds-dual-ring 1.2s linear infinite
+}
+
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg)
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+@media (max-width:850px) {
+    .predict-clinical-btn {
+        width: 100%
+    }
+
+    .selected-clinical-btn {
+        width: 100%
+    }
+
+    .modal-body {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem
+    }
+
+    .list {
+        height: 50vh;
+        width: 100%;
+        overflow: auto
+    }
+
+    .lds-dual-ring {
+        left: 43%
+    }
+}
+
+@media (min-width:576px) {
+    .modal-dialog {
+        max-width: 70vw
+    }
+}
+
+/*#endregion*/
+
+
+
+
+/*#region Transform*/
+@keyframes zoom {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.7);
+    }
+
+    100% {
+        transform: scale(0.9);
+    }
+}
+/*#endregion*/

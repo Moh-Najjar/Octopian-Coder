@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Coder Demo</title>
+
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="#">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no,maximum-scale=1">
+
+    <link href="../css/clinical-coder.css" rel="stylesheet" />
+
+</head>
+<body>
+
+    <div id="clinical-code">
+    </div>
+
+    <script src="../js/clinical-coder.min.js"></script>
+
+    <script>
+        GenerateClinicalCode({
+            apiKey: "ca1e95bde34c4d80a10992e295cc9b43",  // required: your api key
+            theme: {
+                themeColor: "#1e1c64", // optional
+                textColor: "#ffffff", // optional
+            },
+            calbackResponse: function (response) {
+                // write your code here to handle the response
+                console.log(response);
+            }
+        });
+    </script>
+</body>
+</html>
