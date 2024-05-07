@@ -22,6 +22,7 @@ And finally initialize it by this script:
 ```
  GenerateClinicalCode({
      apiKey: "your-api-key",  // required: your api key
+     codeType: "ICD10AM", // required: code type
      theme: {
           themeColor: "#1e1c64", // optional
           textColor: "#ffffff", // optional
