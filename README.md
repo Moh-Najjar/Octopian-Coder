@@ -58,16 +58,17 @@ Here's an example of complete code:
 
     <script>
         GenerateClinicalCode({
-            apiKey: "your-api-key",  // required: your api key
-            theme: {
-                 themeColor: "#1e1c64", // optional
-                 textColor: "#ffffff", // optional
-            },
-            calbackResponse: function (response) {
-                // write your code here to handle the response
-                console.log(response);
-            }
-        });
+          apiKey: "your-api-key",  // required: your api key
+          codeType: "ICD10AM", // required: code type
+          theme: {
+               themeColor: "#1e1c64", // optional
+               textColor: "#ffffff", // optional
+              },
+          calbackResponse: function (response) {
+              // write your code here to handle the response
+                  console.log(response);
+              }
+         });
     </script>
 </body>
 </html>
