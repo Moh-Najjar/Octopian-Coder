@@ -222,7 +222,49 @@
 /*#endregion coding*/
 
 
+/*#region generate-codes*/
+
+.modal-content {
+    height: 100%;
+}
+
+    .modal-content .modal-body .list {
+        border: 1px solid #9d9d9d36;
+    }
+
+.accordion-header {
+    margin-bottom: 1px;
+}
+
+#PredictClinicalDTOsDataSource .accordion-body {
+    padding: 0 !important;
+    border-bottom: 1px solid #a2a2a24f;
+}
+
+.accordion-item:last-of-type .accordion-button {
+    color: #1e1e1e;
+    background-color: #b5cee2;
+}
+
+#PredictClinicalDTOsDataSource {
+    padding: 0;
+}
+
+
+/*#endregion*/
 @media (max-width: 600px) {
+    #PredictClinicalDTOsDataSource .accordion-button {
+        height: 40px;
+    }
+
+        #PredictClinicalDTOsDataSource .list-group-item {
+            padding: 0.5rem;
+        }
+
+    #selectedItems{
+
+    }
+
     #clinical-code .offcanvas.offcanvas-bottom {
         height: 100%;
     }
@@ -310,8 +352,6 @@
     background-color: var(--Theme-background-color);
     color: #fff
 }
-
-
 
 .medical-record {
     border-radius: 8px
@@ -448,9 +488,7 @@
 
 #selectedItems .item-name {
     display: flex;
-    flex-direction: row;
-    column-gap: 1rem;
-    align-items: center
+    flex-direction: column;
 }
 
 #mainSelectedItems {
