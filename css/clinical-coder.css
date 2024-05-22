@@ -5,6 +5,23 @@
     --Theme-text-color: #ffffff;
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--Theme-background-color);
+    border-radius: 10px;
+}
+
 
 .isSelected {
     background-color: #5683b61a;
@@ -248,9 +265,8 @@
 
 #PredictClinicalDTOsDataSource {
     padding: 0;
-    border:0;
+    border: none;
 }
-
 
 /*#endregion*/
 @media (max-width: 600px) {
@@ -258,12 +274,11 @@
         height: 40px;
     }
 
-        #PredictClinicalDTOsDataSource .list-group-item {
-            padding: 0.5rem;
-        }
+    #PredictClinicalDTOsDataSource .list-group-item {
+        padding: 0.5rem;
+    }
 
-    #selectedItems{
-
+    #selectedItems {
     }
 
     #clinical-code .offcanvas.offcanvas-bottom {
