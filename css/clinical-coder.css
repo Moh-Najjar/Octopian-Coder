@@ -5,23 +5,6 @@
     --Theme-text-color: #ffffff;
 }
 
-/* width */
-::-webkit-scrollbar {
-    width: 12px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px grey;
-    border-radius: 10px;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: var(--Theme-background-color);
-    border-radius: 10px;
-}
-
 
 .isSelected {
     background-color: #5683b61a;
@@ -98,6 +81,12 @@
             height: 7rem;
             width: 7rem;
             background-repeat: no-repeat;
+        }
+
+        #clinical-code .flex-content .recording .waiting {
+            display: none;
+            font-weight: bold;
+            font-size: 1rem;
         }
 
         #clinical-code .flex-content .recording .recording-header {
