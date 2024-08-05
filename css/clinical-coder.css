@@ -10,6 +10,10 @@
     background-color: #5683b61a;
 }
 
+.btn-close {
+    background-color: #ffffff;
+}
+
 .spinner-container {
     position: absolute;
     z-index: 99;
@@ -37,9 +41,6 @@
     background-color: #c0adad57;
 }
 
-#clinical-code .offcanvas .offcanvas-header .btn-close {
-    background-color: #ffffff;
-}
 
 #clinical-code .btn.btn-generate {
     background-color: var(--Theme-background-color);
@@ -119,9 +120,19 @@
                 justify-content: center;
             }
 
+    #clinical-code .flex-content .language {
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+        #clinical-code .flex-content .language button {
+            background-color: var(--Theme-background-color);
+            color: var(--Theme-text-color);
+            border: none;
+        }
+
     /*#endregion recording*/
-
-
     /*#region medical-record*/
     #clinical-code .flex-content .medical-record {
         width: 50%;
@@ -166,13 +177,15 @@
                 color: var(--Theme-text-color);
                 border: 1px solid var(--Theme-background-color);
                 border-radius: 0.3rem;
+                position: fixed;
+                bottom: 2px;
             }
 /*#endregion medical-record*/
 
 /*#region coding*/
 .btn-code {
     position: fixed;
-    bottom: 4px;
+    bottom: 2px;
     right: 5px;
     width: 8rem;
     height: 2rem;
@@ -488,7 +501,8 @@
 
 .save-btn, .save-btn:hover {
     background-color: var(--Theme-background-color);
-    color: #fff
+    color: #fff;
+    border: none;
 }
 
 #selectedItems .item-name {
